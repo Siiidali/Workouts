@@ -5,6 +5,12 @@ require("dotenv").config();
 // express app
 const app = express();
 
+
+// middlewares
+
+app.use(express.json());
+
+
 //  connecting to database
 const dbURL = process.env.URLDB;
 mongoose.connect(dbURL,{ useNewUrlParser: true , useUnifiedTopology:true}).then((result)=>{
